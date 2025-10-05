@@ -18,6 +18,30 @@
 
 ---
 
+<!-- Live demo link for QuickAI -->
+<p align="center">
+  <a href="https://quick-ai-two-swart.vercel.app/ai" target="_blank" rel="noopener noreferrer">
+    <img alt="QuickAI - Live Demo" src="https://img.shields.io/badge/Live%20Demo-QuickAI-brightgreen?style=for-the-badge&logo=vercel" />
+  </a>
+</p>
+
+<h1 align="center">🚀 QuickAI — Try the Live Demo</h1>
+
+<p align="center">
+  <a href="https://quick-ai-two-swart.vercel.app/ai" target="_blank" rel="noopener noreferrer">
+    <img alt="Open QuickAI" src="https://img.shields.io/badge/Open%20QuickAI-%23007ACC?style=for-the-badge&logo=google-chrome&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Click the button above</strong> to open the deployed app — explore AI-powered tools like Presentation Maker, Image & Video generation, Resume review and more. ✨
+</p>
+
+---
+---
+
+
+
 ## 🚀 Quick Overview
 
 **QuickAI Hub** is a **next-generation SaaS platform** combining **AI content creation, educational tools, and productivity features** in one unified dashboard.  

@@ -138,6 +138,7 @@ QuickAI/
 │   ├── .env                   # Environment variables
 │   ├── package.json           # Backend dependencies
 │   └── server.js              # Express server entry point
+│   └── vercel.json
 │
 ├── client/                        # Frontend (React + Vite)
 │   ├── public/                    # Static assets
@@ -165,6 +166,7 @@ QuickAI/
 │   ├── package.json                    # Frontend dependencies
 │   ├── vite.config.js                  # Vite configuration
 │   └── tailwind.config.js              # Tailwind CSS config
+│   └── vercel.json
 │
 ├── .gitignore
 └── README.md

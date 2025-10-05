@@ -2,22 +2,7 @@
   <img src="client/src/assets/webpic.png" alt="QuickAI Banner" width="100%">
 </p>
 
-<h1 align="center">
-  <img src="client/src/assets/favicon.svg"> QuickAI – All-in-One AI SaaS for Content, Learning & Productivity
-</h1>
-
-<p align="center">
-  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/Made%20with-React-blue?logo=react&style=for-the-badge" /></a>
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-green?logo=node.js&style=for-the-badge" /></a>
-  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql&style=for-the-badge" /></a>
-  <a href="https://www.figma.com/"><img src="https://img.shields.io/badge/Design-Figma-purple?logo=figma&style=for-the-badge" /></a>
-  <a href="https://www.clerk.com/"><img src="https://img.shields.io/badge/Auth-Clerk-orange?style=for-the-badge" /></a>
-  <a href="https://cloudinary.com/"><img src="https://img.shields.io/badge/Storage-Cloudinary-blue?style=for-the-badge" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/AI-Gemini%202.0%20Flash-red?style=for-the-badge" /></a>
-</p>
-
 ---
-
 <!-- Live demo link for QuickAI -->
 <p align="center">
   <a href="https://quick-ai-two-swart.vercel.app/ai" target="_blank" rel="noopener noreferrer">
@@ -38,7 +23,25 @@
 </p>
 
 ---
+
+<h1 align="center">
+  <img src="client/src/assets/favicon.svg"> QuickAI – All-in-One AI SaaS for Content, Learning & Productivity
+</h1>
+
+<p align="center">
+  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/Made%20with-React-blue?logo=react&style=for-the-badge" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-green?logo=node.js&style=for-the-badge" /></a>
+  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql&style=for-the-badge" /></a>
+  <a href="https://www.figma.com/"><img src="https://img.shields.io/badge/Design-Figma-purple?logo=figma&style=for-the-badge" /></a>
+  <a href="https://www.clerk.com/"><img src="https://img.shields.io/badge/Auth-Clerk-orange?style=for-the-badge" /></a>
+  <a href="https://cloudinary.com/"><img src="https://img.shields.io/badge/Storage-Cloudinary-blue?style=for-the-badge" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/AI-Gemini%202.0%20Flash-red?style=for-the-badge" /></a>
+</p>
+
 ---
+
+
+
 
 
 

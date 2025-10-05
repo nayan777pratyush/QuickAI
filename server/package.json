@@ -24,7 +24,7 @@
     "multer": "^2.0.2",
     "openai": "^5.20.2",
     "pdf-parse": "^1.1.1",
-    "pptxgenjs": "^4.0.1",
+    "pptxgenjs": "^3.9.0",
     "replicate": "^1.2.0",
     "youtubei.js": "^15.1.1"
   },

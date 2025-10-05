@@ -231,32 +231,34 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_test_xxxxx
 ### Step-by-Step Installation
 
 ```bash
-# 1. Clone the repository
+#Clone the repository
 git clone https://github.com/nayan777pratyush/QuickAI.git
+
 cd QuickAI
 
-# 2. Install backend dependencies
+#Install backend dependencies
 cd server
 npm install
 
-# 3. Create backend .env file
-# Copy the environment variables template above and fill in your credentials
+#Create backend .env file
 
-# 4. Set up database
-# Run SQL schema (create tables for users, creations, etc.)
+#Copy the environment variables template above and fill in your credentials
 
-# 5. Install frontend dependencies
+#Set up database
+#Run SQL schema (create tables for users, creations, etc.)
+
+#Install frontend dependencies
 cd ../client
 npm install
 
-# 6. Create frontend .env file
-# Add VITE_BASE_URL and VITE_CLERK_PUBLISHABLE_KEY
+#Create frontend .env file
+#Add VITE_BASE_URL and VITE_CLERK_PUBLISHABLE_KEY
 
-# 7. Start the backend server (from /server directory)
-npm run dev
-# Backend runs on http://localhost:5000
+#Start the backend server (from /server directory)
+npm run server
+#Backend runs on http://localhost:5000
 
-# 8. Start the frontend (from /client directory, in new terminal)
+#Start the frontend (from /client directory, in new terminal)
 npm run dev
 # Frontend runs on http://localhost:5173
 ```

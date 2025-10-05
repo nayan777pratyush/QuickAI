@@ -536,7 +536,7 @@ export const generatePPTX = async (req, res) => {
       max_tokens: 1500,
     });
 
-    const slidesDataRaw = aiResponse.choices[0].message.content;
+    let slidesDataRaw = aiResponse.choices[0].message.content;
     let slidesData;
 
     try {
@@ -549,28 +549,19 @@ export const generatePPTX = async (req, res) => {
       }
 
       const jsonMatch = cleanedData.match(/\[[\s\S]*\]/);
-      if (jsonMatch) {
-        cleanedData = jsonMatch[0];
-      }
+      if (jsonMatch) cleanedData = jsonMatch[0];
 
       slidesData = JSON.parse(cleanedData);
 
-      if (!Array.isArray(slidesData) || slidesData.length === 0) {
+      if (!Array.isArray(slidesData) || slidesData.length === 0)
         throw new Error("Invalid slides data structure");
-      }
 
       for (const slide of slidesData) {
-        if (!slide.title || !Array.isArray(slide.points)) {
+        if (!slide.title || !Array.isArray(slide.points))
           throw new Error("Invalid slide structure");
-        }
       }
     } catch (e) {
-      console.error(
-        "Parse error:",
-        e.message,
-        "\nRaw response:",
-        slidesDataRaw
-      );
+      console.error("Parse error:", e.message, "\nRaw response:", slidesDataRaw);
       return res.json({
         success: false,
         message: "Failed to parse AI response. Please try again.",
@@ -579,21 +570,16 @@ export const generatePPTX = async (req, res) => {
 
     // 2️⃣ Create PowerPoint using PptxGenJS
     const pptx = new PptxGenJS();
-
-    // Set presentation properties
     pptx.author = "AI Content Generator";
     pptx.title = prompt;
     pptx.subject = "AI Generated Presentation";
-
-    // Define layout and styling
-    pptx.layout = "LAYOUT_WIDE"; // 16:9 aspect ratio
+    pptx.layout = "LAYOUT_WIDE"; // 16:9
     pptx.defineLayout({ name: "CUSTOM", width: 10, height: 5.625 });
 
-    // 3️⃣ Add slides with content
     slidesData.forEach((slideData, index) => {
       const slide = pptx.addSlide();
 
-      // Add slide number
+      // Slide number
       slide.addText(`${index + 1}`, {
         x: 9.2,
         y: 5.0,
@@ -604,7 +590,7 @@ export const generatePPTX = async (req, res) => {
         align: "right",
       });
 
-      // Add title with gradient background
+      // Title with rectangle background
       slide.addShape(pptx.ShapeType.rect, {
         x: 0.5,
         y: 0.5,
@@ -625,13 +611,10 @@ export const generatePPTX = async (req, res) => {
         valign: "middle",
       });
 
-      // Add bullet points
+      // Bullet points
       const bullets = slideData.points.map((point) => ({
         text: point,
-        options: {
-          bullet: true,
-          indentLevel: 0,
-        },
+        options: { bullet: true, indentLevel: 0 },
       }));
 
       slide.addText(bullets, {
@@ -642,10 +625,10 @@ export const generatePPTX = async (req, res) => {
         fontSize: 18,
         color: "333333",
         valign: "top",
-        bullet: { code: "2022" }, // Bullet character
+        bullet: { code: "2022" },
       });
 
-      // Add decorative line
+      // Decorative line
       slide.addShape(pptx.ShapeType.line, {
         x: 0.5,
         y: 1.5,
@@ -655,17 +638,20 @@ export const generatePPTX = async (req, res) => {
       });
     });
 
-    // 4️⃣ Save to temporary file
-    const fileName = `AI_Presentation_${Date.now()}.pptx`;
-    const tempPath = path.join(process.cwd(), "temp", fileName);
+    // 3️⃣ Determine temp folder based on environment
+    const isVercel = !!process.env.VERCEL;
+    const tempDir = isVercel
+      ? path.join("/tmp", "QuickAI")
+      : path.join(process.cwd(), "temp");
 
-    // Create temp directory if it doesn't exist
-    const tempDir = path.join(process.cwd(), "temp");
     if (!fs.existsSync(tempDir)) {
       fs.mkdirSync(tempDir, { recursive: true });
     }
 
-    // Write file
+    const fileName = `AI_Presentation_${Date.now()}.pptx`;
+    const tempPath = path.join(tempDir, fileName);
+
+    // 4️⃣ Save PPT locally (temporary)
     await pptx.writeFile({ fileName: tempPath });
     console.log("PPTX file created:", tempPath);
 
@@ -680,16 +666,16 @@ export const generatePPTX = async (req, res) => {
     const permanentUrl = uploadResult.secure_url;
     console.log("Uploaded to Cloudinary:", permanentUrl);
 
-    // Clean up temp file
+    // 6️⃣ Clean up temp file
     fs.unlinkSync(tempPath);
 
-    // 6️⃣ Save to database
+    // 7️⃣ Save record to database
     await sql`INSERT INTO creations (user_id, prompt, content, type) VALUES (${userId}, ${prompt}, ${permanentUrl}, 'ppt')`;
 
     res.json({
       success: true,
       content: permanentUrl,
-      fileName: fileName,
+      fileName,
       slideCount: slidesData.length,
       message: "AI-generated PPTX created successfully!",
     });

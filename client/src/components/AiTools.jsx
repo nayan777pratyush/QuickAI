@@ -22,7 +22,8 @@ const AiTools = () => {
               />
             </h2>
             <p className='text-gray-500 max-w-lg mx-auto'>
-                Everything you need to create, enhance, and optimize your content with cutting-edge Ai technology.
+                 Create content, edit visuals, build presentations, and master any subject with AI-powered 
+                 tools designed for creators, students, and professionals.
             </p>
         </div>
 

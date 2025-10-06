@@ -24,9 +24,10 @@ const Footer = () => {
                 <div className="md:max-w-96">
                     <img className="h-9" src={assets.logo} alt="logo"/>
                     <p className="mt-6 text-sm">
-                        Experience the power of AI with Quick AI. <br/> 
-                        Transform your content creation with our suite of premium AI tools.
-                        Write articles, generate images, and more - all in one place.
+                        Experience the power of AI with QuickAI All-in-One Hub. <br/> 
+                        Create content, generate visuals, build presentations, and study smarter with 
+                        AI-powered tools—write articles, generate images and videos, edit photos, 
+                        create PowerPoint slides, and master any subject with intelligent study assistance.
                     </p>
 
                     {/* Social Connect */}

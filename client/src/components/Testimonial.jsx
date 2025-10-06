@@ -6,23 +6,23 @@ const Testimonial = () => {
         {
             image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
             name: 'John Doe',
-            title: 'Marketing Director, TechCorp',
-            content: 'QuickAI has revolutionized our content workflow. The quality of the articles is outstanding, and it saves us hours of work every week.',
+            title: 'Digital Marketing Manager',
+            content: 'The Study Assistant is a game-changer! I can load PDFs, YouTube videos, and get instant answers with 10K token responses. It\'s like having a personal AI tutor available 24/7.',
             rating: 4,
         },
         {
             image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
             name: 'Jane Smith',
-            title: 'Content Creator, TechSolutions',
-            content: 'QuickAI has made our content creation process effortless. The AI tools have helped us produce high-quality content faster than ever before.',
+            title: 'Content Creator & Designer',
+            content: 'From generating images to removing backgrounds and creating presentations—QuickAI does it all. The image generation quality is stunning, and the background remover saves me hours every week.',
             rating: 5,
         },
         {
             image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
             name: 'David Lee',
-            title: 'Content Writer, InnovateX',
-            content: 'QuickAI has transformed our content creation process. The AI tools have helped us produce high-quality content faster than ever before.',
-            rating: 4,
+            title: 'Computer Science Student',
+            content: 'QuickAI\'s Study Assistant helped me ace my exams! I uploaded my lab manuals, asked questions about specific pages, and got detailed explanations with code examples. The quiz generator is perfect for test prep.',
+            rating: 5,
         },
     ]
 
